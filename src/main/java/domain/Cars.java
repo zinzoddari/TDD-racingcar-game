@@ -1,9 +1,11 @@
 package domain;
 
+import utils.Randoms;
 import utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Cars {
 
@@ -41,5 +43,15 @@ public class Cars {
 
     public int getSize() {
         return car.size();
+    }
+
+    public void play(int advance) {
+
+    }
+
+    public void play() {
+        for (int i = 0; i < loop; i++) {
+            play(Randoms.pickNumberInRange(0, 9));
+        }
     }
 }

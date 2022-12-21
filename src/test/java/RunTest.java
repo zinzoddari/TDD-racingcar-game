@@ -1,4 +1,5 @@
 import domain.Car;
+import domain.Cars;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,5 +39,13 @@ public class RunTest {
         car.run(advance);
 
         assertThat(car.getDistance()).isNotEqualTo(1);
+    }
+
+    @Test
+    void 반복_2번_전체_이동_성공() {
+        Cars cars = new Cars("zz", 2);
+        int advance = 4;
+
+        cars.play(advance);
     }
 }
