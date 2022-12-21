@@ -46,8 +46,33 @@ public class CarTest {
     }
 
     @Test
-    void 자동차_여러대_입력() {
+    void 자동차_여러대_입력_성공() {
         String input = "zinzo,abcd";
         Cars cars = new Cars(input);
+
+        assertThat(cars.getSize()).isEqualTo(2);
+    }
+
+    @Test
+    void 자동차_여러대_입력_실패() {
+        String input = "zinzo,abcddd";
+
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            Cars cars = new Cars(input);
+        });
+    }
+
+    @Test
+    void 자동차_MAX값_이상_입력_오류() {
+        String input = "zinzo,abcd,a,d,c,h,u,g,j,i";
+
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            Cars cars = new Cars(input);
+        });
+    }
+
+    @Test
+    void 자동차_하나_반복횟수_입력_성공() {
+        Cars cars = new Cars("abcdef", 3);
     }
 }
