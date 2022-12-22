@@ -9,7 +9,7 @@ public class RunTest {
     void 전진_성공() {
         int advance = 4;
         Car car = new Car("zz");
-        car.run(advance);
+        car.move(advance);
 
         assertThat(car.getDistance()).isEqualTo(1);
     }
@@ -18,7 +18,7 @@ public class RunTest {
     void 전진_실패() {
         int advance = 4;
         Car car = new Car("zz");
-        car.run(advance);
+        car.move(advance);
 
         assertThat(car.getDistance()).isNotEqualTo(0);
     }
@@ -27,7 +27,7 @@ public class RunTest {
     void 멈춤_성공() {
         int advance = 3;
         Car car = new Car("zz");
-        car.run(advance);
+        car.move(advance);
 
         assertThat(car.getDistance()).isEqualTo(0);
     }
@@ -36,7 +36,7 @@ public class RunTest {
     void 멈춤_실패() {
         int advance = 3;
         Car car = new Car("zz");
-        car.run(advance);
+        car.move(advance);
 
         assertThat(car.getDistance()).isNotEqualTo(1);
     }
@@ -47,5 +47,7 @@ public class RunTest {
         int advance = 4;
 
         cars.play(advance);
+
+        //assertThat(cars.win()).isEqualsTo("zz");
     }
 }

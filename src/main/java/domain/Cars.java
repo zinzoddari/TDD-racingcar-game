@@ -45,13 +45,31 @@ public class Cars {
         return car.size();
     }
 
-    public void play(int advance) {
-
+    private Car run(Car car, int advance) {
+        return car.move(advance);
     }
 
     public void play() {
         for (int i = 0; i < loop; i++) {
-            play(Randoms.pickNumberInRange(0, 9));
+            for (Car car : car) {
+                car = run(car, Randoms.pickNumberInRange(0, 9));
+            }
         }
+    }
+
+    public void play(int advance) {
+        for (int i = 0; i < loop; i++) {
+            for (Car car : car) {
+                car = run(car, advance);
+            }
+        }
+    }
+
+    public List<Car> win() {
+        for (int i = 0; i < loop; i++) {
+
+        }
+
+        return null;
     }
 }

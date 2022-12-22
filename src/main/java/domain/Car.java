@@ -19,8 +19,9 @@ public class Car {
         throw new IllegalArgumentException("[ERROR] 이름은 다섯글자 이하여야합니다.");
     }
 
-    public void run(int advance) {
+    public Car move(int advance) {
         if(advance >= CAR_MOVE_MIN_ADVANCE) distance++;
+        return this;
     }
 
     public int getDistance() {
