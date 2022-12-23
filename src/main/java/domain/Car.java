@@ -7,6 +7,10 @@ public class Car {
     private final String name;
     private int distance = 0;
 
+    public Car() {
+        this.name = null;
+    }
+
     public Car(String name) {
         this.name = validateName(name);
     }

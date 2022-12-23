@@ -15,6 +15,11 @@ public class Cars {
     private final List<Car> car;
     private final int loop;
 
+    public Cars() {
+        this.car = null;
+        this.loop = 0;
+    }
+
     public Cars(String input) {
         this.car = validateCars(setCar(input));
         this.loop = 0;
@@ -65,9 +70,14 @@ public class Cars {
         }
     }
 
-    public List<Car> win() {
+    public Car win() {
+        Cars fi = new Cars();
+        Car winner = new Car();
+        int maxDistance = 0;
         for (int i = 0; i < loop; i++) {
-
+            for (Car car : car) {
+                maxDistance = maxDistance >= car.getDistance() ? car.getDistance() : maxDistance;
+            }
         }
 
         return null;
