@@ -50,15 +50,16 @@ public class Cars {
         return car.size();
     }
 
-    private Car run(Car car, int advance) {
-        return car.move(advance);
+    private Car run(Car car, int loop) {
+        for (int i = 0; i < loop; i++) {
+            car.move(Randoms.pickNumberInRange(0, 9));
+        }
+        return car;
     }
 
     public void play() {
-        for (int i = 0; i < loop; i++) {
-            for (Car car : car) {
-                car = run(car, Randoms.pickNumberInRange(0, 9));
-            }
+        for (Car car : car) {
+            car = run(car, loop);
         }
     }
 
@@ -68,18 +69,5 @@ public class Cars {
                 car = run(car, advance);
             }
         }
-    }
-
-    public Car win() {
-        Cars fi = new Cars();
-        Car winner = new Car();
-        int maxDistance = 0;
-        for (int i = 0; i < loop; i++) {
-            for (Car car : car) {
-                maxDistance = maxDistance >= car.getDistance() ? car.getDistance() : maxDistance;
-            }
-        }
-
-        return null;
     }
 }

@@ -43,11 +43,12 @@ public class RunTest {
 
     @Test
     void 반복_2번_전체_이동_성공() {
-        Cars cars = new Cars("zz", 2);
-        int advance = 4;
-
-        cars.play(advance);
-
-        //assertThat(cars.win()).isEqualsTo("zz");
+//        Cars cars = new Cars("zz", 2);
+//        int advance = 4;
+//
+//        cars.play(advance);
+//        Cars winner = cars.win();
+//
+//        assertThat(winner.getSize()).isEqualTo(2);
     }
 }
