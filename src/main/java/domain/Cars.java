@@ -2,6 +2,7 @@ package domain;
 
 import utils.Randoms;
 import utils.StringUtils;
+import view.PrintOut;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,24 +51,25 @@ public class Cars {
         return car.size();
     }
 
-    private Car run(Car car, int loop) {
+    public void play(int loop) {
+        PrintOut.printRunResult();
+
         for (int i = 0; i < loop; i++) {
-            car.move(Randoms.pickNumberInRange(0, 9));
+            run();
         }
-        return car;
     }
 
-    public void play() {
+    private void run() {
         for (Car car : car) {
-            car = run(car, loop);
+            car.move(Randoms.pickNumberInRange(0, 9));
+
+            PrintOut.result(car);
         }
+
+        PrintOut.printEnter();
     }
 
-    public void play(int advance) {
-        for (int i = 0; i < loop; i++) {
-            for (Car car : car) {
-                car = run(car, advance);
-            }
-        }
+    public List<Car> getCar() {
+        return car;
     }
 }

@@ -1,6 +1,8 @@
 import domain.Car;
 import domain.Cars;
+import domain.Winner;
 import org.junit.jupiter.api.Test;
+import view.PrintOut;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -42,13 +44,11 @@ public class RunTest {
     }
 
     @Test
-    void 반복_2번_전체_이동_성공() {
-//        Cars cars = new Cars("zz", 2);
-//        int advance = 4;
-//
-//        cars.play(advance);
-//        Cars winner = cars.win();
-//
-//        assertThat(winner.getSize()).isEqualTo(2);
+    void 실행() {
+        Cars cars = new Cars("zz,xx,cc");
+        cars.play(3);
+
+        //최종결과 출력 필요
+        PrintOut.printFinalResult(Winner.awards(cars));
     }
 }

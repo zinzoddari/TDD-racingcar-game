@@ -31,4 +31,17 @@ public class Car {
     public int getDistance() {
         return distance;
     }
+
+    public String getStringDistance() {
+        String stringDistance = "";
+        for (int i = 0; i < distance; i++) {
+            stringDistance += "-";
+        }
+
+        return stringDistance;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
