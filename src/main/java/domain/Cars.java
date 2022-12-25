@@ -1,9 +1,12 @@
 package domain;
 
+import utils.Randoms;
 import utils.StringUtils;
+import view.PrintOut;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Cars {
 
@@ -12,6 +15,11 @@ public class Cars {
     public static final int CARS_MAX_SIZE = 9;
     private final List<Car> car;
     private final int loop;
+
+    public Cars() {
+        this.car = null;
+        this.loop = 0;
+    }
 
     public Cars(String input) {
         this.car = validateCars(setCar(input));
@@ -41,5 +49,27 @@ public class Cars {
 
     public int getSize() {
         return car.size();
+    }
+
+    public void play(int loop) {
+        PrintOut.printRunResult();
+
+        for (int i = 0; i < loop; i++) {
+            run();
+        }
+    }
+
+    private void run() {
+        for (Car car : car) {
+            car.move(Randoms.pickNumberInRange(0, 9));
+
+            PrintOut.result(car);
+        }
+
+        PrintOut.printEnter();
+    }
+
+    public List<Car> getCar() {
+        return car;
     }
 }

@@ -73,6 +73,6 @@ public class CarTest {
 
     @Test
     void 자동차_하나_반복횟수_입력_성공() {
-        Cars cars = new Cars("abcdef", 3);
+        Cars cars = new Cars("abcde", 3);
     }
 }
