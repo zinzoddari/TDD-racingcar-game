@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import view.PrintOut;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class RunTest {
     @Test
@@ -48,7 +49,15 @@ public class RunTest {
         Cars cars = new Cars("zz,xx,cc");
         cars.play(3);
 
-        //최종결과 출력 필요
+        //최종결과 출력
         PrintOut.printFinalResult(Winner.awards(cars));
+    }
+
+    @Test
+    void 오류_재입력() {
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            Cars cars = new Cars("xxxxxxx,xx.cc");
+        });
+        Cars cars = new Cars("xx,xx.cc");
     }
 }
