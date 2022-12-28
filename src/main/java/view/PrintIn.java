@@ -1,6 +1,12 @@
 package view;
 
+import utils.Console;
+
 public class PrintIn extends Print {
+
+    public static String inputValue() {
+        return Console.readLine();
+    }
     public static void printInputName() {
         print("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
     }
