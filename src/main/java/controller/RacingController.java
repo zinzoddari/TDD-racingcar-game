@@ -1,10 +1,17 @@
 package controller;
 
-import view.PrintIn;
+import domain.Cars;
+import service.RacingService;
 
 public class RacingController {
 
-    public static void start() {
-        PrintIn.printInputName();
+    private final RacingService racingService;
+
+    public RacingController(RacingService racingService) {
+        this.racingService = racingService;
+    }
+
+    public void start() {
+        Cars cars = racingService.carCreate();
     }
 }
