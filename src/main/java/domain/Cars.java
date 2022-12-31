@@ -14,7 +14,7 @@ public class Cars {
     public static final int CARS_MIN_SIZE = 1;
     public static final int CARS_MAX_SIZE = 9;
     private final List<Car> car;
-    private final int loop;
+    private int loop;
 
     public Cars() {
         this.car = null;
@@ -71,5 +71,9 @@ public class Cars {
 
     public List<Car> getCar() {
         return car;
+    }
+
+    public void setLoop(int loop) {
+        this.loop = loop;
     }
 }

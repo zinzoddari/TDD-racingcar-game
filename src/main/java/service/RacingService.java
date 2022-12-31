@@ -2,7 +2,6 @@ package service;
 
 import domain.Cars;
 import utils.Console;
-import view.Print;
 import view.PrintIn;
 
 public class RacingService {
@@ -23,6 +22,8 @@ public class RacingService {
 
             break;
         }
+
+        cars.setLoop(carPlay());
 
         return cars;
     }
