@@ -1,6 +1,7 @@
 import domain.Car;
 import domain.Cars;
 import org.junit.jupiter.api.Test;
+import service.RacingService;
 import utils.StringUtils;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -74,5 +75,12 @@ public class CarTest {
     @Test
     void 자동차_하나_반복횟수_입력_성공() {
         Cars cars = new Cars("abcde", 3);
+    }
+
+    @Test
+    void 자동차_생성_성공() {
+        RacingService racingService = new RacingService();
+        Cars cars = racingService.carCreate();
+        assertThat(cars.getSize()).isNotZero();
     }
 }
