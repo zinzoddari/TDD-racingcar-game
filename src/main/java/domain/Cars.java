@@ -59,7 +59,7 @@ public class Cars {
         }
     }
 
-    private void run() {
+    public void run() {
         for (Car car : car) {
             car.move(Randoms.pickNumberInRange(0, 9));
 
@@ -75,5 +75,9 @@ public class Cars {
 
     public void setLoop(int loop) {
         this.loop = loop;
+    }
+
+    public int getLoop() {
+        return loop;
     }
 }
