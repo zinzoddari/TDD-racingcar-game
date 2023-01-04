@@ -13,7 +13,7 @@ public class RacingService {
 
         while(true) {
             try {
-                CarName = Console.readLine();
+                CarName = PrintIn.inputValue();
                 cars = new Cars(CarName);
             }
             catch (IllegalArgumentException e) {
