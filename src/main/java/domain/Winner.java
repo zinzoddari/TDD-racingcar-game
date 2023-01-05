@@ -1,22 +1,22 @@
 package domain;
 
+import java.util.stream.Collectors;
+
 public class Winner {
-    public static String winner;
+    public static String winner = "";
 
     public static String awards(Cars cars) {
-        int maxDistance = 0;
+        int maxDistance = cars.getCar().stream()
+                .mapToInt(v -> v.getDistance())
+                .max()
+                .getAsInt();
 
-        for (Car car : cars.getCar()) {
-            if(car.getDistance() == maxDistance) {
-                winner += car.getName() + ",";
-            }
-
-            else if(car.getDistance() > maxDistance) {
-                maxDistance = car.getDistance();
-
-                winner = car.getName() + ",";
-            }
-        }
+        cars.getCar().stream()
+                .filter(car -> car.getDistance() == maxDistance)
+                .collect(Collectors.toList())
+                .forEach(car -> {
+                    winner += car.getName() + ",";
+                });
 
         return winner.substring(0, winner.length() - 1);
     }
